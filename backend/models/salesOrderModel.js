@@ -6,6 +6,11 @@ const generateInvoiceId = () => {
   return `INV-${timestamp}`;
 };
 
+const generateSalesOrderId = () => {
+  const timestamp = Date.now().toString().slice(-8);
+  return `SO-${timestamp}`;
+};
+
 // Fetch all orders (headers only, no line items) — used for list views
 export const getAllOrders = async () => {
   const [rows] = await pool.query(
